@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Ansys_用Workbench建一根型钢 | 老杨博客</title><meta name="author" content="Fairly"><meta name="copyright" content="Fairly"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="有限元分析过程：几何建模-网格划分-模型求解-结果判定与输出 Workbench向工程靠拢，APDL向研究方向靠拢。 创建项目在软件主界面选择该文件拖动到桌面即可创建一个项目。 编辑结构材料右键可以进入材料设置，定义材料的物理属性。 进入三维建模界面 创建型钢截面在菜单栏下支持多种截面快速创建，也可以自己绘制界面。教程直接使用设置好的工字钢界面，修改其参数。 修改型钢界面参数在此处可以进行型钢截面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ansys_用Workbench建一根型钢">
+<meta property="og:url" content="http://example.com/2023/03/16/Ansys_%E7%94%A8Workbench%E5%BB%BA%E4%B8%80%E6%A0%B9%E5%9E%8B%E9%92%A2/index.html">
+<meta property="og:site_name" content="老杨博客">
+<meta property="og:description" content="有限元分析过程：几何建模-网格划分-模型求解-结果判定与输出 Workbench向工程靠拢，APDL向研究方向靠拢。 创建项目在软件主界面选择该文件拖动到桌面即可创建一个项目。 编辑结构材料右键可以进入材料设置，定义材料的物理属性。 进入三维建模界面 创建型钢截面在菜单栏下支持多种截面快速创建，也可以自己绘制界面。教程直接使用设置好的工字钢界面，修改其参数。 修改型钢界面参数在此处可以进行型钢截面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCY6rbG5qb4cgiCVcp3kQCrPoWUXL7FlfQi5nfxSP266dLzcxDFjuzVR3RfNqL9Bqjqs&usqp=CAU">
+<meta property="article:published_time" content="2023-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-16T13:06:25.496Z">
+<meta property="article:author" content="Fairly">
+<meta property="article:tag" content="Ansys">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCY6rbG5qb4cgiCVcp3kQCrPoWUXL7FlfQi5nfxSP266dLzcxDFjuzVR3RfNqL9Bqjqs&usqp=CAU"><link rel="shortcut icon" href="https://raw.githubusercontent.com/JBpeople/pictures/main/20230316154042.png"><link rel="canonical" href="http://example.com/2023/03/16/Ansys_%E7%94%A8Workbench%E5%BB%BA%E4%B8%80%E6%A0%B9%E5%9E%8B%E9%92%A2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Ansys_用Workbench建一根型钢',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-16 21:06:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCY6rbG5qb4cgiCVcp3kQCrPoWUXL7FlfQi5nfxSP266dLzcxDFjuzVR3RfNqL9Bqjqs&amp;usqp=CAU" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://s.cn.bing.net/th?id=OHR.PeruvianRainforest_ZH-CN4066508593_1920x1080.jpg&amp;rf=LaDigue_1920x1080.jpg&amp;pid=hp')"><nav id="nav"><span id="blog-info"><a href="/" title="老杨博客"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Ansys_用Workbench建一根型钢</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-15T16:00:00.000Z" title="发表于 2023-03-16 00:00:00">2023-03-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-16T13:06:25.496Z" title="更新于 2023-03-16 21:06:25">2023-03-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">软件使用</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">403</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Ansys_用Workbench建一根型钢"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>有限元分析过程</strong>：几何建模-网格划分-模型求解-结果判定与输出</p>
+<p><code>Workbench</code>向工程靠拢，<code>APDL</code>向研究方向靠拢。</p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>在软件主界面选择该文件拖动到桌面即可创建一个项目。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105128.png" alt="image.png"></p>
+<h3 id="编辑结构材料"><a href="#编辑结构材料" class="headerlink" title="编辑结构材料"></a>编辑结构材料</h3><p>右键可以进入材料设置，定义材料的物理属性。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105228.png" alt="image.png"></p>
+<h3 id="进入三维建模界面"><a href="#进入三维建模界面" class="headerlink" title="进入三维建模界面"></a>进入三维建模界面</h3><p><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105320.png" alt="image.png"></p>
+<h3 id="创建型钢截面"><a href="#创建型钢截面" class="headerlink" title="创建型钢截面"></a>创建型钢截面</h3><p>在菜单栏下支持多种截面快速创建，也可以自己绘制界面。教程直接使用设置好的工字钢界面，修改其参数。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105505.png" alt="image.png"></p>
+<h3 id="修改型钢界面参数"><a href="#修改型钢界面参数" class="headerlink" title="修改型钢界面参数"></a>修改型钢界面参数</h3><p>在此处可以进行型钢截面参数设置，设置约束。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105655.png" alt="image.png"></p>
+<h3 id="修改单位"><a href="#修改单位" class="headerlink" title="修改单位"></a>修改单位</h3><p>在界面下可以修改单位，普遍工程都是使用mm作为单位。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105811.png" alt="image.png"></p>
+<h3 id="拉伸截面形成体"><a href="#拉伸截面形成体" class="headerlink" title="拉伸截面形成体"></a>拉伸截面形成体</h3><p>选择截面点击<code>Exclude</code>拉伸成一个体。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314105959.png" alt="image.png"></p>
+<h3 id="设置型钢长度"><a href="#设置型钢长度" class="headerlink" title="设置型钢长度"></a>设置型钢长度</h3><p>在下面输入长度之后点击<code>Generate</code>即可生成型钢体。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314110118.png" alt="image.png"></p>
+<h3 id="型钢加倒角"><a href="#型钢加倒角" class="headerlink" title="型钢加倒角"></a>型钢加倒角</h3><p>选择型钢的一条边然后点击<code>Chamfer</code>按钮，在下面输入值然后<code>Generate</code>即可生成倒角。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314110716.png" alt="image.png"></p>
+<h3 id="进入model模块编辑型钢"><a href="#进入model模块编辑型钢" class="headerlink" title="进入model模块编辑型钢"></a>进入model模块编辑型钢</h3><p>通过前面步骤，型钢模型已经搭建完成，进入model主要进行约束点设置，荷载加载。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314112009.png" alt="image.png"></p>
+<h3 id="添加固定约束"><a href="#添加固定约束" class="headerlink" title="添加固定约束"></a>添加固定约束</h3><p>选择构件一个面设置为固定约束。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314112709.png" alt="image.png"></p>
+<h3 id="添加荷载"><a href="#添加荷载" class="headerlink" title="添加荷载"></a>添加荷载</h3><p>选择构件一个面添加荷载。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314112814.png" alt="image.png"></p>
+<h3 id="荷载设置"><a href="#荷载设置" class="headerlink" title="荷载设置"></a>荷载设置</h3><p>在此处设置荷载的类型和荷载大小。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314113533.png" alt="image.png"></p>
+<h3 id="开始计算"><a href="#开始计算" class="headerlink" title="开始计算"></a>开始计算</h3><p>选择<code>solution</code>插入类型，然后再选择<code>Retrieve</code>计算当前结果。<br><img src="https://raw.githubusercontent.com/JBpeople/pictures/main/20230314114040.png" alt="image.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Fairly</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/16/Ansys_%E7%94%A8Workbench%E5%BB%BA%E4%B8%80%E6%A0%B9%E5%9E%8B%E9%92%A2/">http://example.com/2023/03/16/Ansys_%E7%94%A8Workbench%E5%BB%BA%E4%B8%80%E6%A0%B9%E5%9E%8B%E9%92%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">老杨博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Ansys/">Ansys</a></div><div class="post_share"><div class="social-share" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCY6rbG5qb4cgiCVcp3kQCrPoWUXL7FlfQi5nfxSP266dLzcxDFjuzVR3RfNqL9Bqjqs&amp;usqp=CAU" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/16/Ansys_APDL%E5%91%BD%E4%BB%A4%E6%B5%81%E5%BB%BA%E6%A8%A1/" title="Ansys_APDL命令流建模"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Ansys_APDL命令流建模</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/16/GitHub_%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" title="GitHub_博客搭建教程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GitHub_博客搭建教程</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/31/Ansys_2022R2%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" title="Ansys_安装指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-31</div><div class="title">Ansys_安装指南</div></div></a></div><div><a href="/2023/03/31/Ansys_APDL%E5%91%BD%E4%BB%A4%E6%B5%81%E5%BB%BA%E5%B7%A5%E5%AD%97%E9%92%A2%E5%92%8C%E6%A7%BD%E9%92%A2/" title="Ansys_APDL命令流建工字钢和槽钢"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-31</div><div class="title">Ansys_APDL命令流建工字钢和槽钢</div></div></a></div><div><a href="/2023/03/16/Ansys_APDL%E5%91%BD%E4%BB%A4%E6%B5%81%E5%BB%BA%E6%A8%A1/" title="Ansys_APDL命令流建模"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-16</div><div class="title">Ansys_APDL命令流建模</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCY6rbG5qb4cgiCVcp3kQCrPoWUXL7FlfQi5nfxSP266dLzcxDFjuzVR3RfNqL9Bqjqs&amp;usqp=CAU" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fairly</div><div class="author-info__description">游戏，吃饭，睡觉~</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JBpeople" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jbpeople.ck@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">最近总会想到过去的一些事情，也好久没有写博客了。因为工作原因，这周边翻译边学习了一下PML的官方开发资料，还没有看完，后面有了再慢慢更新吧:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E7%BB%93%E6%9E%84%E6%9D%90%E6%96%99"><span class="toc-number">2.</span> <span class="toc-text">编辑结构材料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E7%95%8C%E9%9D%A2"><span class="toc-number">3.</span> <span class="toc-text">进入三维建模界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9E%8B%E9%92%A2%E6%88%AA%E9%9D%A2"><span class="toc-number">4.</span> <span class="toc-text">创建型钢截面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%9E%8B%E9%92%A2%E7%95%8C%E9%9D%A2%E5%8F%82%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">修改型钢界面参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%8D%95%E4%BD%8D"><span class="toc-number">6.</span> <span class="toc-text">修改单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E4%BC%B8%E6%88%AA%E9%9D%A2%E5%BD%A2%E6%88%90%E4%BD%93"><span class="toc-number">7.</span> <span class="toc-text">拉伸截面形成体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%9E%8B%E9%92%A2%E9%95%BF%E5%BA%A6"><span class="toc-number">8.</span> <span class="toc-text">设置型钢长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%8B%E9%92%A2%E5%8A%A0%E5%80%92%E8%A7%92"><span class="toc-number">9.</span> <span class="toc-text">型钢加倒角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5model%E6%A8%A1%E5%9D%97%E7%BC%96%E8%BE%91%E5%9E%8B%E9%92%A2"><span class="toc-number">10.</span> <span class="toc-text">进入model模块编辑型钢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%9B%BA%E5%AE%9A%E7%BA%A6%E6%9D%9F"><span class="toc-number">11.</span> <span class="toc-text">添加固定约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%8D%B7%E8%BD%BD"><span class="toc-number">12.</span> <span class="toc-text">添加荷载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8D%B7%E8%BD%BD%E8%AE%BE%E7%BD%AE"><span class="toc-number">13.</span> <span class="toc-text">荷载设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E8%AE%A1%E7%AE%97"><span class="toc-number">14.</span> <span class="toc-text">开始计算</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/14/E3D_PML%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%EF%BC%9ACollections/" title="E3D_PML二次开发入门：Collections">E3D_PML二次开发入门：Collections</a><time datetime="2023-04-13T16:00:00.000Z" title="发表于 2023-04-14 00:00:00">2023-04-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/14/E3D_PML%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%EF%BC%9AUser-Defined%20Objects/" title="E3D_PML二次开发入门：User-Defined Objects">E3D_PML二次开发入门：User-Defined Objects</a><time datetime="2023-04-13T16:00:00.000Z" title="发表于 2023-04-14 00:00:00">2023-04-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/13/E3D_PML%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%EF%BC%9APML%20Objects/" title="E3D_PML二次开发入门：PML Objects">E3D_PML二次开发入门：PML Objects</a><time datetime="2023-04-12T16:00:00.000Z" title="发表于 2023-04-13 00:00:00">2023-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/12/E3D_PML%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%EF%BC%9APML2%20Functions%20and%20Objects/" title="E3D_PML二次开发入门：PML2 Functions and Objects">E3D_PML二次开发入门：PML2 Functions and Objects</a><time datetime="2023-04-11T16:00:00.000Z" title="发表于 2023-04-12 00:00:00">2023-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/11/E3D_PML%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%EF%BC%9ABoolean%20Expressions%20and%20IF%20Statements/" title="E3D_PML二次开发入门：Boolean Expressions and IF Statements">E3D_PML二次开发入门：Boolean Expressions and IF Statements</a><time datetime="2023-04-10T16:00:00.000Z" title="发表于 2023-04-11 00:00:00">2023-04-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://s.cn.bing.net/th?id=OHR.PeruvianRainforest_ZH-CN4066508593_1920x1080.jpg&amp;rf=LaDigue_1920x1080.jpg&amp;pid=hp')"><div id="footer-wrap"><div class="copyright">&copy;2023 By Fairly</div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
